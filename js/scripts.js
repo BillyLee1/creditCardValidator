@@ -12,17 +12,22 @@ function creditCardEval(cardNum) {
         let sum = 0;
         tempNum = tempNum.toString();
         doubleNum = tempNum.split("");
-        doubleNum.map(function(n) {
-          doubleNum = parseInt(n, 10);
+        
+        let tempDouble = doubleNum.map(function(n) {
+          return parseInt(n);
         })
-        for (let j = 0; j < tempNum.length; j++) {
-          sum += tempNum[j];
+        for (let j = 0; j < tempDouble.length; j++) {
+          sum += tempDouble[j];
         }
+        finalCard.push(sum.toString());
       } else {
-        finalCard.push(tempNum);
+        finalCard.push(tempNum.toString());
       }
+    } else {
+      finalCard.push(cardArray[i]);
     }
   }
+  finalCard.reverse();
   console.log(finalCard);
 }
 
