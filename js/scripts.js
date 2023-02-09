@@ -35,9 +35,7 @@ function creditCardEval(cardNum) {
   
   finalCard.reverse();
   final = finalCard.toString().replaceAll(",", "");
-  console.log(final);
-  console.log(sumOfNums);
-
+  
   isValid(final);
 }
 
@@ -61,6 +59,9 @@ function isValid(ccNum) {
 }
 }
 
+function formIntake() {
+
+}
 
 
 
