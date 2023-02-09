@@ -53,13 +53,14 @@ function isValid(ccNum) {
       console.log("discover"); 
     }
   } else if (ccNum.length === 15) {
-      if (ccArray[0] === "3" && ccArray[1] === "4") {
-        console.log("AMEX");
-      } else if (ccArray[0] === "3" && ccArray[1] === "7") {
-        console.log("Amex");
-      }
+      if (ccArray[0] === "3") {
+        if (ccArray[1] === "4" || ccArray[1] === "7") {
+          console.log("AMEX");
+        }
   }
 }
+}
+
 
 
 
