@@ -42,8 +42,22 @@ function creditCardEval(cardNum) {
 }
 
 function isValid(ccNum) {
+  let ccArray = ccNum.split("");
+  console.log(ccArray);
   if (ccNum.length === 16) {
-    console.log("yup");
+    if (ccArray[0] === "4") {
+      console.log("visa");
+    } else if (ccArray[0] === "5") {
+      console.log("master"); 
+    } else if (ccArray[0] === "6") {
+      console.log("discover"); 
+    }
+  } else if (ccNum.length === 15) {
+      if (ccArray[0] === "3" && ccArray[1] === "4") {
+        console.log("AMEX");
+      } else if (ccArray[0] === "3" && ccArray[1] === "7") {
+        console.log("Amex");
+      }
   }
 }
 
