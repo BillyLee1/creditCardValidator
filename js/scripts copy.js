@@ -4,8 +4,6 @@ function creditCardEval(cardNum) {
   let finalCard = [];
   let tempNum;
   let doubleNum = [];
-  let sumOfNums = 0;
-  let final;
 
   for (let i = 0; i < cardArray.length; i++) {
     if (i % 2 === 0) {
@@ -21,32 +19,16 @@ function creditCardEval(cardNum) {
         for (let j = 0; j < tempDouble.length; j++) {
           sum += tempDouble[j];
         }
-        sumOfNums += sum;
         finalCard.push(sum.toString());
       } else {
         finalCard.push(tempNum.toString());
-        sumOfNums += tempNum;
       }
     } else {
       finalCard.push(cardArray[i]);
-      sumOfNums += parseInt(cardArray[i]);
     }
   }
-  
   finalCard.reverse();
-  final = finalCard.toString().replaceAll(",", "");
-  console.log(final);
-  console.log(sumOfNums);
-
-  isValid(final);
+  console.log(finalCard);
 }
 
-function isValid(ccNum) {
-  if (ccNum.length === 16) {
-    console.log("yup");
-  }
-}
-
-
-
-creditCardEval("4102 0808 8043 5620");
+creditCardEval("4144 6597 1205 9780");
